@@ -7,22 +7,19 @@ public class Page {
 
     private int mImageId;
     private String mText;
-    private Choice mChoice1;
-    private Choice mChoice2;
+    private Choices mChoices;
     private boolean mIsFinal = false;
 
-    public Page(int imageId, String text, Choice choice1, Choice choice2) {
+    public Page(int imageId, String text, Choices choices) {
         mImageId = imageId;
         mText = text;
-        mChoice1 = choice1;
-        mChoice2 = choice2;
+        mChoices = choices;
     }
 
     public Page(int imageId, String text) {
         mImageId = imageId;
         mText = text;
-        mChoice1 = null;
-        mChoice2 = null;
+        mChoices = null;
         mIsFinal = true;
     }
 
@@ -42,20 +39,12 @@ public class Page {
         mText = text;
     }
 
-    public Choice getChoice1() {
-        return mChoice1;
+    public Choices getChoices() {
+        return mChoices;
     }
 
-    public void setChoice1(Choice choice1) {
-        mChoice1 = choice1;
-    }
-
-    public Choice getChoice2() {
-        return mChoice2;
-    }
-
-    public void setChoice2(Choice choice2) {
-        mChoice2 = choice2;
+    public void setChoices(Choices choices) {
+        mChoices = choices;
     }
 
     public boolean isFinal() {

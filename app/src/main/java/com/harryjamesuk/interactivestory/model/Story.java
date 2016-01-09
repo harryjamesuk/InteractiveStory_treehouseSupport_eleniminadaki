@@ -14,32 +14,27 @@ public class Story {
         mPages[0] = new Page(
                 R.mipmap.page0,
                 "On your return trip from studying Saturn's rings, you hear a distress signal that seems to be coming from the surface of Mars. It's strange because there hasn't been a colony there in years. Even stranger, it's calling you by name: \"Help me, %1$s, you're my only hope.\"",
-                new Choice("Stop and investigate", 1),
-                new Choice("Continue home to Earth", 2));
+                new Choices(1, "Stop and investigate", 2, "Continue home to Earth"));
 
         mPages[1] = new Page(
                 R.mipmap.page1,
                 "You deftly land your ship near where the distress signal originated. You didn't notice anything strange on your fly-by, but there is a cave in front of you. Behind you is an abandoned rover from the early 21st century.",
-                new Choice("Explore the cave", 3),
-                new Choice("Explore the rover", 4));
+                new Choices(3, "Explore the cave", 4, "Explore the rover"));
 
         mPages[2] = new Page(
                 R.mipmap.page2,
                 "You continue your course to Earth. Two days later, you receive a transmission from HQ saying that they have detected some sort of anomaly on the surface of Mars near an abandoned rover. They ask you to investigate, but ultimately the decision is yours because your mission has already run much longer than planned and supplies are low.",
-                new Choice("Head back to Mars to investigate", 4),
-                new Choice("Continue home to Earth", 6));
+                new Choices(4, "Head back to Mars to investigate", 6, "Continue home to Earth"));
 
         mPages[3] = new Page(
                 R.mipmap.page3,
                 "Your EVA suit is equipped with a headlamp, which you use to navigate the cave. After searching for a while your oxygen levels are starting to get pretty low. You know you should go refill your tank, but there's a very faint light up ahead.",
-                new Choice("Refill at ship and explore the rover", 4),
-                new Choice("Continue towards the faint light", 5));
+                new Choices(4, "Refill at ship and explore the rover", 5, "Continue towards the faint light"));
 
         mPages[4] = new Page(
                 R.mipmap.page4,
                 "The rover is covered in dust and most of the solar panels are broken. But you are quite surprised to see the on-board system booted up and running. In fact, there is a message on the screen: \"%1$s, come to 28.543436, -81.369031.\" Those coordinates aren't far, but you don't know if your oxygen will last there and back.",
-                new Choice("Explore the coordinates", 5),
-                new Choice("Return to Earth", 6));
+                new Choices(5, "Explore the coordinates", 6, "Return to Earth"));
 
         mPages[5] = new Page(
                 R.mipmap.page5,
