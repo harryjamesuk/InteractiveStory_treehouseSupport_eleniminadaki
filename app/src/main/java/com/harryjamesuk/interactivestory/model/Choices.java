@@ -11,10 +11,11 @@ public class Choices {
     private int mPreviousPage;
     private int mNextPage;
 
-    public Choices(int previousPage, String text1, int nextPage, String text2) {
-        mPreviousPage = previousPage;
+    public Choices(int currentPage, String text1, String text2) {
+        mPreviousPage = currentPage - 1;
         mText1 = text1;
-        mNextPage = nextPage;
+        mNextPage = currentPage + 1;
+        // Don't use currentPage++ here, it doesn't work for some reason :s
         mText2 = text2;
     }
 

@@ -62,15 +62,26 @@ public class StoryActivity extends Activity {
         pageText = String.format(pageText, mName);
         mTextView.setText(pageText);
 
-        if (mCurrentPage.isFinal()) {
+        if (mCurrentPage.isSingle()) {
             mPreviousButton.setVisibility(View.INVISIBLE);
-            mNextButton.setText("PLAY AGAIN");
-            mNextButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                }
-            });
+            if (mCurrentPage.getPageId() == 0) {
+                mNextButton.setText("PROCEED");
+                mNextButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mPreviousButton.setVisibility(View.VISIBLE);
+                        loadPage(1);
+                    }
+                });
+            } else {
+                mNextButton.setText("PLAY AGAIN");
+                mNextButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                });
+            }
         } else {
             mPreviousButton.setText(mCurrentPage.getChoices().getText1());
             mNextButton.setText(mCurrentPage.getChoices().getText2());

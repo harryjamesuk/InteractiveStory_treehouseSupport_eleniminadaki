@@ -5,22 +5,33 @@ package com.harryjamesuk.interactivestory.model;
  */
 public class Page {
 
+    private int mPageId;
     private int mImageId;
     private String mText;
     private Choices mChoices;
-    private boolean mIsFinal = false;
+    private boolean mIsSingle = false;
 
-    public Page(int imageId, String text, Choices choices) {
+    public Page(int pageId, int imageId, String text, Choices choices) {
+        mPageId = pageId;
         mImageId = imageId;
         mText = text;
         mChoices = choices;
     }
 
-    public Page(int imageId, String text) {
+    public Page(int pageId, int imageId, String text) {
+        mPageId = pageId;
         mImageId = imageId;
         mText = text;
         mChoices = null;
-        mIsFinal = true;
+        mIsSingle = true;
+    }
+
+    public int getPageId() {
+        return mPageId;
+    }
+
+    public void setPageId(int pageId) {
+        mPageId = pageId;
     }
 
     public int getImageId() {
@@ -47,12 +58,12 @@ public class Page {
         mChoices = choices;
     }
 
-    public boolean isFinal() {
-        return mIsFinal;
+    public boolean isSingle() {
+        return mIsSingle;
     }
 
-    public void setFinal(boolean isFinal) {
-        mIsFinal = isFinal;
+    public void setSingle(boolean isFinal) {
+        mIsSingle = isFinal;
     }
 
 }
